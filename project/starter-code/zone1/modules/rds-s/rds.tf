@@ -37,6 +37,7 @@ resource "aws_rds_cluster" "udacity_cluster-s" {
   preferred_backup_window = "07:00-09:00"
   skip_final_snapshot      = true
   storage_encrypted        = false
+  replication_source_identifier = var.primary_db_cluster_arn
   depends_on = [aws_rds_cluster_parameter_group.cluster_pg-s]
 }
 
