@@ -2,7 +2,7 @@
 
 ## AWS Zones
 We are using the following AWS zones:
-1. us-east-2 (Ohio) with 2 AZS - us-east-2a and us-east-2b
+1. us-east-2 (Ohio) with 2 AZS - us-east-2a, us-east-2b and us-east-2c
 2. us-west-1 (California) with 2 usable AZS - us-west-1b and us-west-1c
 
 ## Servers and Clusters
