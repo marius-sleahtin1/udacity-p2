@@ -1,17 +1,21 @@
 # Infrastructure
 
 ## AWS Zones
-Identify your zones here
+We are using the following AWS zones:
+1. us-east-2 (Ohio) with 2 AZS - us-east-2a and us-east-2b
+2. us-west-1 (California) with 2 usable AZS - us-west-1b and us-west-1c
 
 ## Servers and Clusters
 
 ### Table 1.1 Summary
-|------------------|--------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| VPC	           | Local network in AWS     | N/A 																   | 2                                                        		 | We maintain two VPCs, one situated in us-east-1 and the other in us-west-1, ensuring redundancy in case of failure in either location.     |
-| EC2 VM           | Compute resources        | t3.micro															   | 6 																 | This asset will be created across two regions: three VMs within one VPC and another three VMs within the second VPC, with each VM residing in a distinct availability zone for regional redundancy.
-| EKS Cluster      | Containerised environment| N/A - contains EC2 as compute power (t3.medium)                        | 2                                                               | The EKS cluster will contain two nodes to ensure internal resilience, with one EKS cluster provisioned in each region.
-| ALB              | Entrypoint in the AWS    | N/A                                                                    | 2                                                               | Each region will feature a redundant ALB, ensuring continuity in case of a failure in one region.
-| SQL cluster (RDS)| Database                 | N/A                                                                    | 4                                                               | We'll establish two clusters, each comprising two instances.
+| **Asset**             | **Purpose**               | **Size**                                        | **Qty** | **DR**                                                                                                                                                                                              |
+|-----------------------|---------------------------|-------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **VPC**               | Local network in AWS      | N/A                                             | 2       | We maintain two VPCs, one situated in us-east-1 and the other in us-west-1, ensuring redundancy in case of failure in either location.                                                              |
+| **EC2 VM**            | Compute resources         | t3.micro                                        | 6       | This asset will be created across two regions: three VMs within one VPC and another three VMs within the second VPC, with each VM residing in a distinct availability zone for regional redundancy. |
+| **EKS Cluster**       | Containerised environment | N/A - contains EC2 as compute power (t3.medium) | 2       | The EKS cluster will contain two nodes to ensure internal resilience, with one EKS cluster provisioned in each region.                                                                              |
+| **ALB**               | Entrypoint in the AWS     | N/A                                             | 2       | Each region will feature a redundant ALB, ensuring continuity in case of a failure in one region.                                                                                                   |
+| **SQL cluster (RDS)** | Database                  | N/A                                             | 4       | We'll establish two clusters, each comprising two instances.                                                                                                                                        |
+
 
 ### Descriptions
 VPC - Functions as the local network in AWS where we can generate essential resources.
