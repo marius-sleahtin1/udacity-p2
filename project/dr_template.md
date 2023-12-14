@@ -26,7 +26,7 @@ SQL Cluster - Functions as the database storing various data for the deployed ap
 
 ## DR Plan
 ### Pre-Steps:
-1.Establish the VPC within the secondary region.
+1.Establish the VPC within the secondary region (us-west1-).
 2.Set up the EKS Cluster, incorporating nodegroups housing EC2 instances, and create EC2 instances if necessary.
 3.Deploy the RDS cluster.
 4.Validate that the infrastructure operates as intended.
